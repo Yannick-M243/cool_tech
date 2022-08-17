@@ -1,0 +1,45 @@
+body {
+  margin: auto 200px;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+h3 {
+  font-size: 1em;
+}
+.container {
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.article {
+  padding: 10px;
+  margin: 10px;
+  width: 20%;
+  min-height: 200px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 20px;
+}
+.article:hover {
+  border: 3px solid;
+}
+
+.article-preview p {
+  font-size: 0.9rem;
+}
+.article-content {
+  margin: auto 150px !important;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
