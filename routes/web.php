@@ -27,3 +27,4 @@ Route::get('/', [homeController::class,'index']);
 Route::get('/article/{article_id}', [articleController::class,'index']);
 //Route::get('/category/{slug}', [categoryController::class,'index']);
 Route::post('/category',[categoryController::class,'create']);
+Route::post('/article', [articleController::class,'addtag']);

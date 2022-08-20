@@ -6,5 +6,15 @@ use Illuminate\Http\Request;
 
 class tagController extends Controller
 {
-    //
+            public function create(Request $request){
+        
+        $ = $request->categoryId;
+
+        $filtered_articles = DB::table('articles')->where("category_id","=",$category_Id)->get();
+        $selectedCat= DB::table('categories')->where("category_id","=",$category_Id)->first();
+
+        return view('category')->with(['filtered_articles'=>$filtered_articles])->with(['selectedCat'=>$selectedCat]);
+        
+        
+    }
 }

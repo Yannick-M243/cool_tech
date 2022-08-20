@@ -33,9 +33,26 @@
                 </tr>
             @endif
 
-
-
         </table>
+
+        <h3>Add tagg</h3>
+        <form method="post" action="{{ url('/article') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <label><strong>Category :</strong></label><br>
+                <label><input type="checkbox" name="tags[]" value="High-Performance Computing">High-Performance
+                    Computing</label>
+                <label><input type="checkbox" name="tags[]" value="AI">AI</label>
+                <label><input type="checkbox" name="tags[]" value="Google">Google</label>
+                <label><input type="checkbox" name="tags[]" value="Yellow"> Yellow</label>
+                <label><input type="checkbox" name="tags[]" value="Singularity">Singularity</label>
+                <input type="hidden" value="{{$article->article_id}}" name="article-id">
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success btn-sm">Save</button>
+            </div>
+
+        </form>
 
     </div>
 

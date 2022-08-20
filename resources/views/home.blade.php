@@ -20,43 +20,34 @@
         <a href="{{ url('/tag') }}">Tag</a>
         <div>
             <h3>Filter</h3>
-            <div>
-                <form action="category" method="POST">
-                    @csrf
-                    <label for="categoryId">Choose a category:</label>
-                    <select name="categoryId" id="category-choice">
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
-                        @endforeach
-                    </select>
-                    <button type="submit" name="sbt-cat">Filter by Category </button>
-                </form>
-            </div>
-            <div>
-                <form action="tag" method="POST">
-                    @csrf
-                    <label for="tag">Choose a tag:</label>
-                    <select name="tag" id="tag-choice">
-                        <option value="ai">AI</option>
-                        <option value="google">Google</option>
-                        <option value="high-performance">High performance Computing </option>
-                        <option value="singularity">Singularity</option>
-                    </select>
-                    <button type="submit" name="sbt-cat">Filter by Tag </button>
-                </form>
+            <div class="filter-bar">
+                <div>
+                    <form action="category" method="POST">
+                        @csrf
+                        <label for="categoryId">Choose a category:</label>
+                        <select name="categoryId" id="category-choice">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
+                            @endforeach
+                        </select>
+                        <button type="submit" name="sbt-cat">Filter by Category </button>
+                    </form>
+                </div>
+                <div>
+                    <form action="tag" method="POST">
+                        @csrf
+                        <label for="tag">Choose a tag:</label>
+                        <select name="tag" id="tag-choice">
+                            <option value="ai">AI</option>
+                            <option value="google">Google</option>
+                            <option value="high-performance">High performance Computing </option>
+                            <option value="singularity">Singularity</option>
+                        </select>
+                        <button type="submit" name="sbt-tag">Filter by Tag </button>
+                    </form>
+                </div>
             </div>
         </div>
-        <h3>Filter</h3>
-        <form action="category" method="POST" name="cat-form" id="cat-form">
-            @csrf
-            <label for="categoryId">Choose a category:</label>
-            <select name="categoryId" id="category-choice">
-                @foreach ($categories as $category)
-                    <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
-                @endforeach
-            </select>
-            <button type="submit" name="sbt-cat">Filter by Category </button>
-        </form>
         <h2>Latest articles</h2>
         <div class="container">
             @foreach ($articles as $article)

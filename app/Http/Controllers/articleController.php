@@ -18,4 +18,29 @@ class articleController extends Controller
 
     return view('article')->with(['article'=>$selectedArticle])->with(['category'=>$category])->with(['tags'=>$tags]);
     }
+
+    public function addtag(Request $request){
+        //$tags = $request->all();
+       // $tags['tags'] = $request->input('tags');
+        $tagss = serialize($request->input('tags'));
+        $id = $request->input('article-id');
+
+        $database_tags=DB::table('tags')->where('article_id', '=', $id)->exists();
+
+        if ($database_tags){
+            $affected = DB::table('tags')
+              ->where('article_id', $id)
+              ->update(['tag_name' => $tagss]);
+        //DB::table('tags')->where('articles_id', '=', $id)->delete();
+        }else{
+        DB::table('tags')->insert([
+        'article_id' => $id,
+        'tag_name' => $tagss
+        ]);
+        }
+        //delete all tags
+        
+        //Post::create($input);
+        return redirect()->route('article.index');
+    }
 }
