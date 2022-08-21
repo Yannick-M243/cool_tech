@@ -1,4 +1,4 @@
-Clone the repo
+-   Clone the repo
 
     ```sh
     git clone https://github.com/Yannick-M243/cool_tech.git
