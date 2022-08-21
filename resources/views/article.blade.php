@@ -44,7 +44,7 @@
                     Computing</label>
                 <label><input type="checkbox" name="tags[]" value="AI">AI</label>
                 <label><input type="checkbox" name="tags[]" value="Google">Google</label>
-                <label><input type="checkbox" name="tags[]" value="Yellow"> Yellow</label>
+                <label><input type="checkbox" name="tags[]" value="Yellow">Yellow</label>
                 <label><input type="checkbox" name="tags[]" value="Singularity">Singularity</label>
                 <input type="hidden" value="{{$article->article_id}}" name="article-id">
             </div>

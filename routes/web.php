@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\articleController;
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\tagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,6 @@ var_dump($data['name']);
 
 Route::get('/', [homeController::class,'index']);
 Route::get('/article/{article_id}', [articleController::class,'index']);
-//Route::get('/category/{slug}', [categoryController::class,'index']);
-Route::post('/category',[categoryController::class,'create']);
+Route::post('/category',[categoryController::class,'index']);
 Route::post('/article', [articleController::class,'addtag']);
+Route::post('/tag', [tagController::class,'index']);

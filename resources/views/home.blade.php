@@ -38,10 +38,11 @@
                         @csrf
                         <label for="tag">Choose a tag:</label>
                         <select name="tag" id="tag-choice">
-                            <option value="ai">AI</option>
-                            <option value="google">Google</option>
-                            <option value="high-performance">High performance Computing </option>
-                            <option value="singularity">Singularity</option>
+                            <option value="1">AI</option>
+                            <option value="2">Google</option>
+                            <option value="3">High-Performance
+                                Computing</option>
+                            <option value="4">Singularity</option>
                         </select>
                         <button type="submit" name="sbt-tag">Filter by Tag </button>
                     </form>

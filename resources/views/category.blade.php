@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <h1>{{ $selectedCat->category_name }} Category</h1>
+    <h1>{{ $selectedCat->category_name }}Category</h1>
+    <a href="{{ url('/') }}">Back</a>
     <h2>Articles</h2>
     <div class="container">
         @foreach ($filtered_articles as $filtered_article)
