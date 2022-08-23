@@ -7,14 +7,16 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
 <body>
-    <a href="{{ url('/') }}">Back</a>
+    <a href="{{ url('/') }}" class="btn btn-secondary my-4">Home</a>
     <div class="article-content">
-        <h1>{{ $article->article_name }}</h1>
-        <p>{{ $article->content }}</p>
-        <table>
+        <h1 class="my-3">{{ $article->article_name }}</h1>
+        <p class="my-3">{{ $article->content }}</p>
+        <table class="my-3">
             <tr>
                 <td>Creation date:</td>
                 <td>{{ $article->creation_date }}</td>
@@ -24,6 +26,7 @@
                 <td>{{ $category->category_name }}</td>
             </tr>
 
+            <!--checking if the article has a tag before adding the tag row-->
             @if ($tags->isNotEmpty())
                 <tr>
                     <td>Tags :</td>
@@ -35,23 +38,22 @@
 
         </table>
 
-        <h3>Add tagg</h3>
-        <form method="post" action="{{ url('/article') }}" enctype="multipart/form-data">
+        <h2 class="p-3">Add tagg</h2>
+        <form action="{{ url('/article.addtag') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label><strong>Category :</strong></label><br>
-                <label><input type="checkbox" name="tags[]" value="High-Performance Computing">High-Performance
+                <label class="p-2"><input type="checkbox" name="tags[]"
+                        value="High-Performance Computing">High-Performance
                     Computing</label>
-                <label><input type="checkbox" name="tags[]" value="AI">AI</label>
-                <label><input type="checkbox" name="tags[]" value="Google">Google</label>
-                <label><input type="checkbox" name="tags[]" value="Yellow">Yellow</label>
-                <label><input type="checkbox" name="tags[]" value="Singularity">Singularity</label>
-                <input type="hidden" value="{{$article->article_id}}" name="article-id">
+                <label class="p-2"><input type="checkbox" name="tags[]" value="AI">AI</label>
+                <label class="p-2"><input type="checkbox" name="tags[]" value="Google">Google</label>
+                <label class="p-2"><input type="checkbox" name="tags[]" value="Yellow">Yellow</label>
+                <label class="p-2"><input type="checkbox" name="tags[]" value="Singularity">Singularity</label>
+                <input type="hidden" value="{{ $article->article_id }}" name="article-id">
             </div>
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-success btn-sm">Save</button>
+                <button type="submit" class="btn btn-primary p-3">Save</button>
             </div>
-
         </form>
 
     </div>

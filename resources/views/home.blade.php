@@ -11,46 +11,17 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Cool tech</h1>
+    <h1 class="my-4">Cool tech</h1>
     <section id="section1">
-        <a href="{{ url('/category') }}">Category</a>
-        <a href="{{ url('/tag') }}">Tag</a>
-        <div>
-            <h3>Filter</h3>
-            <div class="filter-bar">
-                <div>
-                    <form action="category" method="POST">
-                        @csrf
-                        <label for="categoryId">Choose a category:</label>
-                        <select name="categoryId" id="category-choice">
-                            @foreach ($categories as $category)
-                                <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
-                            @endforeach
-                        </select>
-                        <button type="submit" name="sbt-cat">Filter by Category </button>
-                    </form>
-                </div>
-                <div>
-                    <form action="tag" method="POST">
-                        @csrf
-                        <label for="tag">Choose a tag:</label>
-                        <select name="tag" id="tag-choice">
-                            <option value="1">AI</option>
-                            <option value="2">Google</option>
-                            <option value="3">High-Performance
-                                Computing</option>
-                            <option value="4">Singularity</option>
-                        </select>
-                        <button type="submit" name="sbt-tag">Filter by Tag </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <h2>Latest articles</h2>
-        <div class="container">
+        <a href="{{ url('/search') }}" class="btn btn-secondary m-2">Search</a>
+        <a href="{{ url('/legal') }}" class="btn btn-secondary m-2">Terms</a>
+        <h2 class="py-3">Latest articles</h2>
+        <div class="container py-3">
             @foreach ($articles as $article)
                 <div class="article">
                     <div class="article-title">
@@ -59,11 +30,7 @@
                         </a>
                     </div>
                     <div class="article-preview">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-                            blanditiis non magni voluptates, eligendi aliquid ab vel perspiciatis numquam perferendis
-                            veritatis illum omnis eveniet minima autem laboriosam! Laborum, dolores eveniet?
-                        </p>
+                        <p>{{ Str::of($article->content)->limit(150) }}</p>
                     </div>
                 </div>
             @endforeach

@@ -11,11 +11,12 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     </head>
 
     <body>
         <h1>{{ $selectedTag }} Tag</h1>
-        <a href="{{ url('/') }}">Back</a>
+        <a href="{{ url('/search') }}">Back</a>
         <h2>Articles</h2>
         <div class="container">
             @foreach ($filtered_articles as $filtered_article)
@@ -26,11 +27,7 @@
                         </a>
                     </div>
                     <div class="article-preview">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-                            blanditiis non magni voluptates, eligendi aliquid ab vel perspiciatis numquam perferendis
-                            veritatis illum omnis eveniet minima autem laboriosam! Laborum, dolores eveniet?
-                        </p>
+                        <p>{{ Str::of($filtered_article->content)->limit(150); }}</p>
                     </div>
                 </div>
             @endforeach

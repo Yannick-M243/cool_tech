@@ -6,6 +6,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\articleController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\tagController;
+use App\Http\Controllers\searchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +19,21 @@ use App\Http\Controllers\tagController;
 |
 */
 
-
+/*
 Route::post('/category',function(){;
 $data = $request->request->get('form');
 var_dump($data['name']);
 });
-
-Route::get('/', [homeController::class,'index']);
+*/
 Route::get('/article/{article_id}', [articleController::class,'index']);
+Route::post('/article', [articleController::class,'index']);
 Route::post('/category',[categoryController::class,'index']);
-Route::post('/article', [articleController::class,'addtag']);
+Route::post('/article.addtag', [articleController::class,'addtag']);
+Route::post('/search.findById', [searchController::class,'findById']);
+Route::post('/search.findByCat', [searchController::class,'findByCat']);
+Route::post('/search.findByTag', [searchController::class,'findByTag']);
 Route::post('/tag', [tagController::class,'index']);
+Route::get('/search', [searchController::class,'index']);
+Route::get('/legal', function(){
+    return view('legal');
+});

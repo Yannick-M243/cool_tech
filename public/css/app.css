@@ -1,5 +1,7 @@
 body {
-  margin: auto 200px;
+  margin: auto 200px !important;
+  background-color: rgb(46, 46, 46) !important;
+  color: azure !important;
 }
 
 h1,
@@ -8,7 +10,7 @@ h3 {
   text-align: center;
 }
 h3 {
-  font-size: 1em;
+  font-size: 1em !important;
 }
 .container {
   height: auto;
@@ -44,7 +46,12 @@ h3 {
   width: 70%;
 }
 
-.filter-bar {
-  display: flex;
-  justify-content: space-between;
+
+table tr td {
+  padding: 10px !important;
+}
+
+.alert{
+  width: 600px;
+  height: 200px;
 }
