@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <x-cookie-alert />
     <h1 class="my-4">Cool tech</h1>
     <section id="section1">
         <a href="{{ url('/search') }}" class="btn btn-secondary m-2">Search</a>
