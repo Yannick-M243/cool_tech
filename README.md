@@ -1,3 +1,5 @@
+#Installation
+
 -   Clone the repo
 
     ```sh
@@ -28,8 +30,21 @@
     DB_CONNECTION=mysql
     B_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=test
+    DB_DATABASE=cool_tech
     DB_USERNAME=test
-    DB_PASSWORD=root
+    DB_PASSWORD=
+    ```
+    
+-   Generate a new application key
+
+    ```sh
+    php artisan key:generate
+    ```
+
+-   Use the file cool_tech.sql to import the database in order to make the program work
+-   Start dev server
+
+    ```bash
+    php artisan serve
     ```
 
