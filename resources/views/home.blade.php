@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -16,11 +17,8 @@
 </head>
 
 <body>
-    <x-cookie-alert />
     <h1 class="my-4">Cool tech</h1>
-    <section id="section1">
-        <a href="{{ url('/search') }}" class="btn btn-secondary m-2">Search</a>
-        <a href="{{ url('/legal') }}" class="btn btn-secondary m-2">Terms</a>
+    <section>
         <h2 class="py-3">Latest articles</h2>
         <div class="container py-3">
             @foreach ($articles as $article)
@@ -37,6 +35,9 @@
             @endforeach
         </div>
     </section>
+    <x-cookie-alert />
+    <x-footer />
 </body>
+
 
 </html>

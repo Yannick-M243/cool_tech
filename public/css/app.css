@@ -1,9 +1,12 @@
 body {
-  margin: auto 200px !important;
+  font-family: "Enriqueta", sans-serif !important;
   background-color: rgb(46, 46, 46) !important;
   color: azure !important;
 }
 
+section {
+  margin: auto 200px !important;
+}
 h1,
 h2,
 h3 {
@@ -46,12 +49,52 @@ h3 {
   width: 70%;
 }
 
-
 table tr td {
   padding: 10px !important;
 }
 
-.alert{
-  width: 600px;
-  height: 200px;
+.alert {
+  position: fixed !important;
+  bottom: 0;
+  right: 0;
+  width: 380px;
+  height: 120px;
+  background-color: rgba(197, 197, 197, 0.43) !important;
+}
+
+.close {
+  border-radius: 10px !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.footer {
+  margin-top: 50px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100% !important;
+  min-height: 160px;
+  background-color: #4a4a4a;
+  color: white;
+}
+
+.inner ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.inner ul li {
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 10px;
+}
+.inner ul li a {
+  color: white;
+}
+.inner ul li a:hover {
+  color: rgb(46, 46, 46);
 }
