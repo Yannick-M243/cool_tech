@@ -25,10 +25,7 @@ This project was built using:
 - IDE: Visual Studio Code
 - Web Server: XAMPP
 - MySQL administration tool: phpMyAdmin 
-
-## Prerequisite
-- [XAMPP](https://www.apachefriends.org/fr/index.html).
-- [Visual Studio Code](https://code.visualstudio.com/download).
+- Composer
 
 ## Installation 
 
