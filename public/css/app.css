@@ -70,8 +70,6 @@ table tr td {
 }
 
 .footer {
-  position: absolute !important;
-  bottom: 0;
   margin-top: 50px !important;
   display: flex;
   justify-content: center;
